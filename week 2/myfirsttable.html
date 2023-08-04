@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My tables</title>
+    <!--style here-->
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      tr,
+      th,
+      td {
+        padding: 20px;
+        border: 4px solid black;
+        font-size: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <caption style="color: red; font-size: 40px;">This my table!</caption>
+    <table>
+      <tr>
+        <th colspan="2">Heading 1</th>
+        <th>Heading 2</th>
+        <th>Heading 3</th>
+      </tr>
+
+      <tr>
+        <td rowspan="2">Data 1</td>
+        <td>Data 2</td>
+        <td>Data 3</td>
+      </tr>
+    </table>
+  </body>
+</html>

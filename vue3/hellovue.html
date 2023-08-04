@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Hello world App</title>
+
+    <script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<style>
+.myDiv {
+    border: 5px outset brown;
+    background-color: aqua;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <div id="app" class="myDiv">
+        <h1>Hello World</h1>
+        <h1>{{title2}}</h1>
+        <h1>{{title2.split('').reverse().join('')}}</h1>
+        <h1>{{title3}}</h1>
+        <h1>{{title4}}</h1>
+        <h1 style="font-size: 70px;">{{count}}</h1>
+        <button v-on:click="increment">Increase the value</button>
+        <h1>{{list}}</h1>
+        <h1>{{checked}}</h1>
+        <input type="text"v-model="count"/>
+    </div>
+
+    <script type="module">
+      import { createApp} from 'vue'
+
+      createApp({
+        data() {
+            return{
+                title: "Hello World! Vue",
+                title2: "beans",
+                title3: "more beans",
+                title4: "beans 4 a new bean",
+                count: 0,
+                list: [1,5,7,9],
+                checked: true,
+            };
+        },
+        methods: {
+            increment(){
+                this.count++
+            },
+        },
+      }).mount("#app");
+
+    </script>
+</body>
+</html>

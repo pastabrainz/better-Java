@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shoppinglist</title>
+
+    <script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<style>
+.myDiv {
+    border: 5px outset purple;
+    background-color: green;
+    text-align: center;
+}
+</style>
+
+</head>
+<body>
+    <div id="app" class="myDiv">
+        <h1>My shopping list</h1>
+        <h1>{{message}}</h1>
+        <input type="text">
+        <button @click="addItem">Add shopping Item</button>
+
+        <ol>
+            <li v-for="i in shoppinglist" :key="i.id">{{i.value}}</li>
+        </ol>
+    </div>
+
+    <script type="module">
+        import { createApp} from 'vue';
+  
+        let itemId=0;
+
+        createApp({
+          data() {
+              return{
+                  message: "hello shopping list",
+                  shoppingitem: "",
+                  shoppinglist: [],
+              };
+          },
+    methods: {
+        addItem(){
+            this.shoppinglist.push({
+                id: itemId++,
+                value: this.shoppingitem,
+        });
+            this.shoppingitem="";
+        },
+    },
+        }).mount("#app");
+  
+      </script>
+</body>
+</html>
